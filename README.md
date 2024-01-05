@@ -12,7 +12,7 @@ This LaTeX package adds the commands `\sitelenpona` and `\sitelen{*}`.
 
 `\sitelen{*}` writes the sitelen symbol provided as an argument, which works in both text and math mode (though in math mode it is equivalent to `\text{\sitelen{*}}`). The argument has to be lower case and an exact match to the symbol's name.
 
-This package was made for and tested with LuaLaTex. I am not sure if the way other engines handle Unicode characters is compatible with this package.
+This package was made for and tested with LuaLaTeX. I am not sure if the way other engines handle Unicode characters is compatible with this package.
 
 # Usage
 * Install Jack Humbert's `sitelen-pona-pona.otf` font on your machine or include the file in your LaTeX project's directory.
