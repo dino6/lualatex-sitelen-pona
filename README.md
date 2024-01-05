@@ -18,3 +18,21 @@ This package was made for and tested with LuaLaTeX. I am not sure if the way oth
 * Install Jack Humbert's `sitelen-pona-pona.otf` font on your machine or include the file in your LaTeX project's directory.
 * Include `sitelen-pona.sty` in your LaTeX project's directory.
 * Import the package with `\usepackage{sitelen-pona}`.
+
+# Example
+
+```
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{sitelen-pona}
+
+\begin{document}
+  Let $\sitelen{pilin} \colon \mathbb R \to \mathbb R$ be the function given by
+  \[ \sitelen{pilin}(\sitelen{mun}) = \int_0^{\sitelen{mun}} e^{-\sitelen{kon}^2} d\sitelen{kon} \]
+
+  This function is known as the {\sitelenpona elo} function.
+\end{document}
+```
+
+![compiled latex file showing the definition of the error function](https://github.com/dino6/lualatex-sitelen-pona/blob/main/example/example.png)
