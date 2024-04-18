@@ -1,22 +1,24 @@
 ## Notice
-This package is based on Jack Humbert's [sitelen pona pona](https://github.com/jackhumbert/sitelen-pona-pona) font (a _cleaned_ version of sitelen pona).
+This package is based on [Jack Humbert's sitelen pona pona](https://github.com/jackhumbert/sitelen-pona-pona) font (a _cleaned_ version of sitelen pona), which does the heavy lifting.
 
-However, the font in the latest release of that repository is slightly outdated. This package was made using the one in Jack's repository's head branch, which is included in this repository for convenience
+However, the font in the latest release of that repository is slightly outdated (doesn't have tonsi or kijetesantakalu). This package was made using the one in Jack's repository's head branch, which is included in this repository for convenience.
 
 Also, this is the first LaTeX package I have ever made.
 
 # Description
-This LaTeX package adds the commands `\sitelenpona` and `\sitelen{*}`.
+This LaTeX package adds the commands `\sitelenfont` and `\toki{*}`.
 
-`\sitelenpona` sets the font of the current environment to `sitelen-pona-pona.otf`, which allows writing text in the style of sitelen pona.
+`\sitelenfont` sets the font of the current environment to `sitelen-pona-pona.otf`, which allows writing text in the style of sitelen pona. 
 
-`\sitelen{*}` writes the sitelen symbol provided as an argument, which works in both text and math mode (though in math mode it is equivalent to `\text{\sitelen{*}}`). The argument has to be lower case and an exact match to the symbol's name.
+`\toki{*}` is equivalent to `{\sitelenfont *}`, though in math mode it is equivalent to `\text{\toki{*}}`.
 
-This package was made for and tested with LuaLaTeX. I am not sure if the way other engines handle Unicode characters is compatible with this package.
+For every toki pona word (available in Humbert's sitelen pona pona), this package also adds the commands `\toki*` as a shorthand for `\toki{*}` (ex. `\tokitonsi`, which is equivalent to `\toki{tonsi}`). Bare in mind that any text can be passed to `\toki`, like `\toki{jan tino li nasa}`.
+
+This package was made for and tested with LuaLaTeX. I am not sure if the way other engines are compatible with this package.
 
 # Usage
 * Install Jack Humbert's `sitelen-pona-pona.otf` font on your machine or include the file in your LaTeX project's directory.
-* Include `sitelen-pona.sty` in your LaTeX project's directory.
+* Install `sitelen-pona.sty` or include it in your LaTeX project's directory.
 * Import the package with `\usepackage{sitelen-pona}`.
 
 # Example
@@ -28,10 +30,10 @@ This package was made for and tested with LuaLaTeX. I am not sure if the way oth
 \usepackage{sitelen-pona}
 
 \begin{document}
-  Let $\sitelen{pilin} \colon \mathbb R \to \mathbb R$ be the function given by
-  \[ \sitelen{pilin}(\sitelen{mun}) = \int_0^{\sitelen{mun}} e^{-\sitelen{kon}^2} d\sitelen{kon} \]
+	Let $\tokipilin \colon \mathbb R \to \mathbb R$ be the function given by
+	\[ \tokipilin(\tokimun) = \frac{2}{\sqrt \pi} \int_0^{\tokimun} e^{-\tokikon^2} d \tokikon \]
 
-  This function is known as the {\sitelenpona elo} function.
+	This function is known as the \toki{elo} function.	
 \end{document}
 ```
 

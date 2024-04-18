@@ -6,142 +6,144 @@
 \RequirePackage{xstring}
 \RequirePackage{amsmath}
 
-\newfontfamily{\sitelenpona}{sitelen-pona-pona}
+\newfontfamily{\sitelenfont}{sitelen-pona-pona}
 
-\newcommand{\sitelen@char}[1]{%
-	\relax\ifmmode\text{\sitelenpona\char"#1} \else {\sitelenpona\char"#1} \fi
+\newcommand{\raccoon@sitelenpona}[1]{%
+	\IfSubStr{#1}{kijetesantakalu}{%
+		\StrSubstitute{#1}{kijetesantakalu}{\char"EE85}%
+	}{#1}%
 }
 
-\newcommand{\sitelen}[1]{\IfStrEqCase{#1}{
-		{a}{\sitelen@char{EE00}}
-		{akesi}{\sitelen@char{EE01}}
-		{ala}{\sitelen@char{EE02}}
-		{alasa}{\sitelen@char{EE03}}
-		{ale}{\sitelen@char{EE04}}
-		{anpa}{\sitelen@char{EE05}}
-		{ante}{\sitelen@char{EE06}}
-		{anu}{\sitelen@char{EE07}}
-		{awen}{\sitelen@char{EE08}}
-		{e}{\sitelen@char{EE09}}
-		{en}{\sitelen@char{EE0A}}
-		{esun}{\sitelen@char{EE0B}}
-		{ijo}{\sitelen@char{EE0C}}
-		{ike}{\sitelen@char{EE0D}}
-		{ilo}{\sitelen@char{EE0E}}
-		{insa}{\sitelen@char{EE0F}}
-		{jaki}{\sitelen@char{EE10}}
-		{jan}{\sitelen@char{EE11}}
-		{jelo}{\sitelen@char{EE12}}
-		{jo}{\sitelen@char{EE13}}
-		{kala}{\sitelen@char{EE14}}
-		{kalama}{\sitelen@char{EE15}}
-		{kama}{\sitelen@char{EE16}}
-		{kasi}{\sitelen@char{EE17}}
-		{ken}{\sitelen@char{EE18}}
-		{kepeken}{\sitelen@char{EE19}}
-		{kili}{\sitelen@char{EE1A}}
-		{kiwen}{\sitelen@char{EE1B}}
-		{ko}{\sitelen@char{EE1C}}
-		{kon}{\sitelen@char{EE1D}}
-		{kule}{\sitelen@char{EE1E}}
-		{kulupu}{\sitelen@char{EE1F}}
-		{kute}{\sitelen@char{EE20}}
-		{la}{\sitelen@char{EE21}}
-		{lape}{\sitelen@char{EE22}}
-		{laso}{\sitelen@char{EE23}}
-		{lawa}{\sitelen@char{EE24}}
-		{len}{\sitelen@char{EE25}}
-		{lete}{\sitelen@char{EE26}}
-		{li}{\sitelen@char{EE27}}
-		{lili}{\sitelen@char{EE28}}
-		{linja}{\sitelen@char{EE29}}
-		{lipu}{\sitelen@char{EE2A}}
-		{loje}{\sitelen@char{EE2B}}
-		{lon}{\sitelen@char{EE2C}}
-		{luka}{\sitelen@char{EE2D}}
-		{lukin}{\sitelen@char{EE2E}}
-		{lupa}{\sitelen@char{EE2F}}
-		{ma}{\sitelen@char{EE30}}
-		{mama}{\sitelen@char{EE31}}
-		{mani}{\sitelen@char{EE32}}
-		{meli}{\sitelen@char{EE33}}
-		{mi}{\sitelen@char{EE34}}
-		{mije}{\sitelen@char{EE35}}
-		{moku}{\sitelen@char{EE36}}
-		{moli}{\sitelen@char{EE37}}
-		{monsi}{\sitelen@char{EE38}}
-		{mu}{\sitelen@char{EE39}}
-		{mun}{\sitelen@char{EE3A}}
-		{musi}{\sitelen@char{EE3B}}
-		{mute}{\sitelen@char{EE3C}}
-		{nanpa}{\sitelen@char{EE3D}}
-		{nasa}{\sitelen@char{EE3E}}
-		{nasin}{\sitelen@char{EE3F}}
-		{nena}{\sitelen@char{EE40}}
-		{ni}{\sitelen@char{EE41}}
-		{nimi}{\sitelen@char{EE42}}
-		{noka}{\sitelen@char{EE43}}
-		{o}{\sitelen@char{EE44}}
-		{olin}{\sitelen@char{EE45}}
-		{ona}{\sitelen@char{EE46}}
-		{open}{\sitelen@char{EE47}}
-		{pakala}{\sitelen@char{EE48}}
-		{pali}{\sitelen@char{EE49}}
-		{palisa}{\sitelen@char{EE4A}}
-		{pan}{\sitelen@char{EE4B}}
-		{pana}{\sitelen@char{EE4C}}
-		{pi}{\sitelen@char{EE4D}}
-		{pilin}{\sitelen@char{EE4E}}
-		{pimeja}{\sitelen@char{EE4F}}
-		{pini}{\sitelen@char{EE50}}
-		{pipi}{\sitelen@char{EE51}}
-		{poka}{\sitelen@char{EE52}}
-		{poki}{\sitelen@char{EE53}}
-		{pona}{\sitelen@char{EE54}}
-		{pu}{\sitelen@char{EE55}}
-		{sama}{\sitelen@char{EE56}}
-		{seli}{\sitelen@char{EE57}}
-		{selo}{\sitelen@char{EE58}}
-		{seme}{\sitelen@char{EE59}}
-		{sewi}{\sitelen@char{EE5A}}
-		{sijelo}{\sitelen@char{EE5B}}
-		{sike}{\sitelen@char{EE5C}}
-		{sin}{\sitelen@char{EE5D}}
-		{sina}{\sitelen@char{EE5E}}
-		{sinpin}{\sitelen@char{EE5F}}
-		{sitelen}{\sitelen@char{EE60}}
-		{sona}{\sitelen@char{EE61}}
-		{soweli}{\sitelen@char{EE62}}
-		{suli}{\sitelen@char{EE63}}
-		{suno}{\sitelen@char{EE64}}
-		{supa}{\sitelen@char{EE65}}
-		{suwi}{\sitelen@char{EE66}}
-		{tan}{\sitelen@char{EE67}}
-		{taso}{\sitelen@char{EE68}}
-		{tawa}{\sitelen@char{EE69}}
-		{telo}{\sitelen@char{EE6A}}
-		{tenpo}{\sitelen@char{EE6B}}
-		{toki}{\sitelen@char{EE6C}}
-		{tomo}{\sitelen@char{EE6D}}
-		{tu}{\sitelen@char{EE6E}}
-		{unpa}{\sitelen@char{EE6F}}
-		{uta}{\sitelen@char{EE70}}
-		{utala}{\sitelen@char{EE71}}
-		{walo}{\sitelen@char{EE72}}
-		{wan}{\sitelen@char{EE73}}
-		{waso}{\sitelen@char{EE74}}
-		{wawa}{\sitelen@char{EE75}}
-		{weka}{\sitelen@char{EE76}}
-		{wile}{\sitelen@char{EE77}}
-		{apeja}{\sitelen@char{EE78}}
-		{monsuta}{\sitelen@char{EE79}}
-		{kipisi}{\sitelen@char{EE7A}}
-		{kin}{\sitelen@char{EE7B}}
-		{oko}{\sitelen@char{EE7C}}
-		{namako}{\sitelen@char{EE7D}}
-		{pake}{\sitelen@char{EE7E}}
-		{leko}{\sitelen@char{EE7F}}
-		{tonsi}{\sitelen@char{EE84}}
-		{kijetesantakalu}{\sitelen@char{EE85}}
-	}
+\newcommand{\toki}[1]{%
+	\relax\ifmmode\text{\sitelenfont \raccoon@sitelenpona{#1}} \else {\sitelenfont \raccoon@sitelenpona{#1}}\fi
 }
+
+\newcommand{\tokia}{\toki{a}}
+\newcommand{\tokiakesi}{\toki{akesi}}
+\newcommand{\tokiala}{\toki{ala}}
+\newcommand{\tokialasa}{\toki{alasa}}
+\newcommand{\tokiale}{\toki{ale}}
+\newcommand{\tokianpa}{\toki{anpa}}
+\newcommand{\tokiante}{\toki{ante}}
+\newcommand{\tokianu}{\toki{anu}}
+\newcommand{\tokiawen}{\toki{awen}}
+\newcommand{\tokie}{\toki{e}}
+\newcommand{\tokien}{\toki{en}}
+\newcommand{\tokiesun}{\toki{esun}}
+\newcommand{\tokiijo}{\toki{ijo}}
+\newcommand{\tokiinsa}{\toki{insa}}
+\newcommand{\tokijaki}{\toki{jaki}}
+\newcommand{\tokijan}{\toki{jan}}
+\newcommand{\tokijelo}{\toki{jelo}}
+\newcommand{\tokijo}{\toki{jo}}
+\newcommand{\tokikala}{\toki{kala}}
+\newcommand{\tokikalama}{\toki{kalama}}
+\newcommand{\tokimaka}{\toki{maka}}
+\newcommand{\tokimasi}{\toki{masi}}
+\newcommand{\tokiken}{\toki{ken}}
+\newcommand{\tokikepeken}{\toki{kepeken}}
+\newcommand{\tokikili}{\toki{kili}}
+\newcommand{\tokikiwen}{\toki{kiwen}}
+\newcommand{\tokiko}{\toki{ko}}
+\newcommand{\tokikon}{\toki{kon}}
+\newcommand{\tokikule}{\toki{kule}}
+\newcommand{\tokikulupu}{\toki{kulupu}}
+\newcommand{\tokikute}{\toki{kute}}
+\newcommand{\tokila}{\toki{la}}
+\newcommand{\tokilape}{\toki{lape}}
+\newcommand{\tokilaso}{\toki{laso}}
+\newcommand{\tokilawa}{\toki{lawa}}
+\newcommand{\tokilen}{\toki{len}}
+\newcommand{\tokilete}{\toki{lete}}
+\newcommand{\tokili}{\toki{li}}
+\newcommand{\tokilili}{\toki{lili}}
+\newcommand{\tokilinja}{\toki{linja}}
+\newcommand{\tokilipu}{\toki{lipu}}
+\newcommand{\tokiloje}{\toki{loje}}
+\newcommand{\tokilon}{\toki{lon}}
+\newcommand{\tokiluka}{\toki{luka}}
+\newcommand{\tokilukin}{\toki{lukin}}
+\newcommand{\tokilupa}{\toki{lupa}}
+\newcommand{\tokima}{\toki{ma}}
+\newcommand{\tokimama}{\toki{mama}}
+\newcommand{\tokimani}{\toki{mani}}
+\newcommand{\tokimeli}{\toki{meli}}
+\newcommand{\tokimi}{\toki{mi}}
+\newcommand{\tokimije}{\toki{mije}}
+\newcommand{\tokimoku}{\toki{moku}}
+\newcommand{\tokimoli}{\toki{moli}}
+\newcommand{\tokimonsi}{\toki{monsi}}
+\newcommand{\tokimu}{\toki{mu}}
+\newcommand{\tokimun}{\toki{mun}}
+\newcommand{\tokimusi}{\toki{musi}}
+\newcommand{\tokimute}{\toki{mute}}
+\newcommand{\tokinanpa}{\toki{nanpa}}
+\newcommand{\tokinasa}{\toki{nasa}}
+\newcommand{\tokinasin}{\toki{nasin}}
+\newcommand{\tokinena}{\toki{nena}}
+\newcommand{\tokini}{\toki{ni}}
+\newcommand{\tokinimi}{\toki{nimi}}
+\newcommand{\tokinoka}{\toki{noka}}
+\newcommand{\tokio}{\toki{o}}
+\newcommand{\tokiolin}{\toki{olin}}
+\newcommand{\tokiona}{\toki{ona}}
+\newcommand{\tokiopen}{\toki{open}}
+\newcommand{\tokipakala}{\toki{pakala}}
+\newcommand{\tokipali}{\toki{pali}}
+\newcommand{\tokipalisa}{\toki{palisa}}
+\newcommand{\tokipan}{\toki{pan}}
+\newcommand{\tokipana}{\toki{pana}}
+\newcommand{\tokipi}{\toki{pi}}
+\newcommand{\tokipilin}{\toki{pilin}}
+\newcommand{\tokipimeja}{\toki{pimeja}}
+\newcommand{\tokipini}{\toki{pini}}
+\newcommand{\tokipipi}{\toki{pipi}}
+\newcommand{\tokipoka}{\toki{poka}}
+\newcommand{\tokipoki}{\toki{poki}}
+\newcommand{\tokipona}{\toki{pona}}
+\newcommand{\tokipu}{\toki{pu}}
+\newcommand{\tokisama}{\toki{sama}}
+\newcommand{\tokiseli}{\toki{seli}}
+\newcommand{\tokiselo}{\toki{selo}}
+\newcommand{\tokiseme}{\toki{seme}}
+\newcommand{\tokisewi}{\toki{sewi}}
+\newcommand{\tokisijelo}{\toki{sijelo}}
+\newcommand{\tokisike}{\toki{sike}}
+\newcommand{\tokisin}{\toki{sin}}
+\newcommand{\tokisina}{\toki{sina}}
+\newcommand{\tokisinpin}{\toki{sinpin}}
+\newcommand{\tokisitelen}{\toki{sitelen}}
+\newcommand{\tokisona}{\toki{sona}}
+\newcommand{\tokisoweli}{\toki{soweli}}
+\newcommand{\tokisuli}{\toki{suli}}
+\newcommand{\tokisuno}{\toki{suno}}
+\newcommand{\tokisupa}{\toki{supa}}
+\newcommand{\tokisuwi}{\toki{suwi}}
+\newcommand{\tokitan}{\toki{tan}}
+\newcommand{\tokitaso}{\toki{taso}}
+\newcommand{\tokitawa}{\toki{tawa}}
+\newcommand{\tokitelo}{\toki{telo}}
+\newcommand{\tokitenpo}{\toki{tenpo}}
+\newcommand{\tokitoki}{\toki{toki}}
+\newcommand{\tokitomo}{\toki{tomo}}
+\newcommand{\tokitu}{\toki{tu}}
+\newcommand{\tokiunpa}{\toki{unpa}}
+\newcommand{\tokiuta}{\toki{uta}}
+\newcommand{\tokiutala}{\toki{utala}}
+\newcommand{\tokiwalo}{\toki{walo}}
+\newcommand{\tokiwan}{\toki{wan}}
+\newcommand{\tokiwaso}{\toki{waso}}
+\newcommand{\tokiwawa}{\toki{wawa}}
+\newcommand{\tokiweka}{\toki{weka}}
+\newcommand{\tokiwile}{\toki{wile}}
+\newcommand{\tokiapeja}{\toki{apeja}}
+\newcommand{\tokimonsuta}{\toki{monsuta}}
+\newcommand{\tokikipisi}{\toki{kipisi}}
+\newcommand{\tokikin}{\toki{kin}}
+\newcommand{\tokioko}{\toki{oko}}
+\newcommand{\tokinamako}{\toki{namako}}
+\newcommand{\tokipake}{\toki{pake}}
+\newcommand{\tokileko}{\toki{leko}}
+\newcommand{\tokitonsi}{\toki{tonsi}}
+\newcommand{\tokikijetesantakalu}{\toki{kijetesantakalu}}
+
