@@ -6,15 +6,15 @@ However, the font in the latest release of that repository is slightly outdated 
 Also, this is the first LaTeX package I have ever made.
 
 # Description
-This LaTeX package adds the commands `\sitelenfont` and `\toki{*}`.
+This LuaLaTeX/XeLaTeX package adds the commands `\sitelenfont` and `\toki`.
 
 `\sitelenfont` sets the font of the current environment to `sitelen-pona-pona.otf`, which allows writing text in the style of sitelen pona. 
 
 `\toki{*}` is equivalent to `{\sitelenfont *}`, though in math mode it is equivalent to `\text{\toki{*}}`.
 
-For every toki pona word (available in Humbert's sitelen pona pona), this package also adds the commands `\toki*` as a shorthand for `\toki{*}` (ex. `\tokitonsi`, which is equivalent to `\toki{tonsi}`). Bare in mind that any text can be passed to `\toki`, like `\toki{jan tino li nasa}`.
+For every toki pona word (available in Humbert's sitelen pona pona), this package also adds the commands `\toki*` (ex. `\tokitonsi`, `\tokipilin`). Bare in mind that any text can be passed to `\toki`, like `\toki{jan tino li nasa}`. Humbert's font makes use of OTF's ligatures to turn toki pona words into the corresponding sitelen pona symbols. The previous example should turn the words _jan_, _li_ and _nasa_ into the corresponding symbols. However, this feature is not reliable and the `\toki*` commands don't make use of it.
 
-This package was made for and tested with LuaLaTeX. I am not sure if the way other engines are compatible with this package.
+This package was made for and tested with LuaLaTeX. I'm not sure if everything works alright in XeLaTeX.
 
 # Usage
 * Install Jack Humbert's `sitelen-pona-pona.otf` font on your machine or include the file in your LaTeX project's directory.
